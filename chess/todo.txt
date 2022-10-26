@@ -1,0 +1,23 @@
+1. Board - Class
+    1.1 Matrix(8x8)
+
+2. Class Fugire(abstract)
+    2.1 All figures(white/black) and Empty
+    2.2 For figures implement check_moves and move methods
+
+3. Player(black/white)
+
+4. GameLogic class
+
+5. Main class
+
+
+For all variables and modules use snake_case
+
+
+Git commands
+create new branch - checkout -b <branch_name>
+push your branch  - git push --set-upstream origin <branch_name>
+after first push you can use only git push
+to change branch use git checkout <branch_name>
+to get last update on branch use git pull
