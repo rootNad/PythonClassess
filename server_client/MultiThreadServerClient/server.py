@@ -15,15 +15,17 @@ def handle_client(conn, addr):
 
     connected = True
     while connected:
-        msg = conn.recv(SIZE).decode(FORMAT)
-        if msg == DISCONNECT_MSG:
-            connected = False
+        try:
+            msg = conn.recv(SIZE).decode(FORMAT)
+            if msg == DISCONNECT_MSG:
+                connected = False
 
-        print(f"[{addr}] {msg}")
+            print(f"[{addr}] {msg}")
 
-        msg = "AAAAAAAAAAAA"
-        conn.send(msg.encode(FORMAT))
-
+            msg = "AAAAAAAAAAAA"
+            conn.send(msg.encode(FORMAT))
+        except Exception as e:
+            print(e)
     conn.close()
 
 
@@ -67,5 +69,7 @@ if __name__ == "__main__":
     In code:
         1. import wikipedia
         2. article = wikipedia.summary(<ArticleName>, sentences=<NumOfSentences>)
+        
+    OpenWeather
 
 """
